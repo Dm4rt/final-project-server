@@ -15,6 +15,29 @@ const Student = db.define("student", {
   lastname: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      isEmail: true,
+    }
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    defaultValue: 'https://www.swic.edu/wp-content/uploads/2017/05/Math-Science-Computer-Science-DSC0381.jpg'
+  },
+  campusId: {
+    type: Sequelize.INTEGER,
+    allowNull: true,
+  },
+  GPA: {
+    type: Sequelize.FLOAT,
+    validate: {
+      min: 0.0, //We'll use 4.0 scale since that's what HUnter uses
+      max: 4.0
+    }
   }
 });
 
