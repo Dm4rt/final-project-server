@@ -23,7 +23,8 @@ const Campus = db.define("campus", {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: 'https://clipart-library.com/2023/college-building-clipart-xl.png'
   }
 });
 
